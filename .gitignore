@@ -1,0 +1,6 @@
+*.o
+tags
+*.swp
+main.cpp
+tree
+parser
