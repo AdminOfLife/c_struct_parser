@@ -28,7 +28,12 @@
 #define tree_util_hh_
 
 #include <iostream>
+#include <list>
+#include <string>
 #include "tree.hh"
+
+using std::list;
+using std::string;
 
 namespace kptree {
 
@@ -44,8 +49,10 @@ namespace kptree {
 
   template<class T>
     void print_subtree_dashed(const tree<T>& t, typename tree<T>::iterator iRoot, 
-        int level,
+        std::list<std::string> &indent,
         std::ostream& str=std::cout);
+
+  void print_indent(const std::list<std::string> &indent, std::ostream &str=std::cout);
 
 
 
@@ -101,7 +108,9 @@ namespace kptree {
       int headCount = t.number_of_siblings(t.begin());
       int headNum = 0;
       for(typename tree<T>::sibling_iterator iRoots = t.begin(); iRoots != t.end(); ++iRoots, ++headNum) {
-        print_subtree_dashed(t,iRoots,0,str);
+        std::list<std::string> indent;
+        indent.push_back(" ");
+        print_subtree_dashed(t,iRoots,indent,str);
         if (headNum != headCount) {
           str << std::endl;
         }
@@ -109,54 +118,56 @@ namespace kptree {
     }
 
   template<class T>
-void print_subtree_dashed(const tree<T>& t, typename tree<T>::iterator iRoot, int level,  std::ostream& str) 
-{
-  if(t.empty()) return;
-  if (t.number_of_children(iRoot) == 0) {
-    str << *iRoot;	
-  }
-  else {
-    int rootSiblingsCount = t.number_of_siblings(iRoot);
-    int isRootLastSibling = (rootSiblingsCount -1 == t.index(iRoot));
-    // parent
-    str << *iRoot;
-    str << "\n";
-    for(int indent = 0;indent < level;indent++){
-      if(isRootLastSibling)
-        str << " ";
-      else
-        str << "│";
-    }
+    void print_subtree_dashed(const tree<T>& t, typename tree<T>::iterator iRoot, std::list<string> &indent,  std::ostream& str) 
+    {
+      if(t.empty()) return;
+      str << "\n";
+      print_indent(indent, str);
 
-    // child1, ..., childn
-    int siblingCount = t.number_of_siblings(t.begin(iRoot));
-    if (siblingCount > 1)
-      str << "├";
-    else
-      str << "└";
-    int siblingNum;
-    typename tree<T>::sibling_iterator iChildren;
-    for (iChildren = t.begin(iRoot), siblingNum = 0;
-        iChildren != t.end(iRoot);
-        ++iChildren, ++siblingNum) {
-      // recursively print child
-      print_subtree_dashed(t,iChildren,level+1, str);
-      // comma after every child except the last one
-      if (siblingNum != siblingCount ) {
-        str << "\n";
-        for(int indent = 0;indent < level;indent++){
-          if(isRootLastSibling)
-            str << " ";
-          else
-            str << "│";
-        }
-        if (siblingNum < siblingCount-1)
-          str << "├";
-        else
+      int isRootLastSibling = t.number_of_siblings(iRoot) == t.index(iRoot);
+      int isRootHead = t.depth(iRoot) == 0;
+
+      if (!isRootHead){
+        if (isRootLastSibling)
           str << "└";
+        else
+          str << "├";
       }
-    }
+
+      str << *iRoot;	
+
+      if (t.number_of_children(iRoot) == 0) return;
+
+      // child1, ..., childn
+      int siblingCount = t.number_of_siblings(t.begin(iRoot));
+      int siblingNum;
+      typename tree<T>::sibling_iterator iChildren;
+
+      if(isRootLastSibling)
+        indent.push_back(" ");
+      else
+        indent.push_back("│");
+
+      for (iChildren = t.begin(iRoot), siblingNum = 0;
+          iChildren != t.end(iRoot);
+          ++iChildren, ++siblingNum) {
+        // recursively print child
+        print_subtree_dashed(t,iChildren,indent, str);
+        // comma after every child except the last one
+        if (siblingNum < siblingCount -1  ) {
+        }
+      }
+      indent.pop_back();
+
+}
+
+void print_indent(const std::list<std::string> &indent, std::ostream &str){
+  for(typename std::list<std::string>::const_iterator it = indent.begin();
+      it != indent.end();
+      it ++){
+    str << *(it);
   }
+  
 }
 
 };

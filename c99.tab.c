@@ -518,19 +518,19 @@ static const yytype_uint16 yyrline[] =
      189,   190,   191,   192,   193,   194,   195,   196,   200,   201,
      205,   206,   210,   211,   212,   213,   214,   218,   225,   232,
      239,   246,   253,   260,   267,   274,   281,   288,   295,   302,
-     313,   321,   331,   355,   379,   400,   407,   417,   427,   447,
-     465,   478,   488,   502,   516,   523,   535,   545,   553,   568,
-     569,   570,   571,   572,   576,   577,   581,   582,   586,   593,
-     600,   610,   614,   628,   642,   649,   661,   681,   697,   713,
-     737,   761,   781,   797,   809,   825,   841,   856,   863,   874,
-     882,   900,   910,   928,   929,   933,   934,   938,   939,   940,
-     944,   945,   949,   950,   954,   955,   956,   960,   961,   962,
-     963,   964,   965,   966,   967,   968,   969,   970,   974,   975,
-     976,   980,   981,   982,   983,   987,   991,   992,   996,   997,
-    1001,  1002,  1003,  1004,  1005,  1006,  1010,  1011,  1012,  1016,
-    1017,  1021,  1022,  1026,  1027,  1031,  1032,  1036,  1037,  1038,
-    1042,  1043,  1044,  1045,  1046,  1047,  1051,  1052,  1053,  1054,
-    1055,  1059,  1060,  1064,  1065,  1069,  1070,  1074,  1075
+     313,   321,   331,   356,   381,   403,   410,   420,   430,   450,
+     468,   481,   491,   505,   519,   526,   538,   548,   556,   571,
+     572,   573,   574,   575,   579,   580,   584,   585,   589,   596,
+     603,   613,   617,   631,   645,   652,   664,   684,   700,   716,
+     740,   764,   784,   800,   812,   828,   844,   859,   866,   877,
+     885,   903,   913,   931,   932,   936,   937,   941,   942,   943,
+     947,   948,   952,   953,   957,   958,   959,   963,   964,   965,
+     966,   967,   968,   969,   970,   971,   972,   973,   977,   978,
+     979,   983,   984,   985,   986,   990,   994,   995,   999,  1000,
+    1004,  1005,  1006,  1007,  1008,  1009,  1013,  1014,  1015,  1019,
+    1020,  1024,  1025,  1029,  1030,  1034,  1035,  1039,  1040,  1041,
+    1045,  1046,  1047,  1048,  1049,  1050,  1054,  1055,  1056,  1057,
+    1058,  1062,  1063,  1067,  1068,  1072,  1073,  1077,  1078
 };
 #endif
 
@@ -2029,15 +2029,16 @@ yyreduce:
           );
 
           cout << endl;
+          print_tree_bracketed(ast);
           print_tree_dashed(ast);
           cout << endl;
           (yyval) = ast;
         }
-#line 2037 "c99.tab.c" /* yacc.c:1646  */
+#line 2038 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 113:
-#line 355 "c99.y" /* yacc.c:1646  */
+#line 356 "c99.y" /* yacc.c:1646  */
     { 
           tree<string> ast;
           tree<string>::iterator root, subroot1, subroot2;
@@ -2059,14 +2060,15 @@ yyreduce:
 
           cout << endl;
           print_tree_bracketed(ast);
+          print_tree_bracketed(ast);
           cout << endl;
           (yyval) = ast;
         }
-#line 2066 "c99.tab.c" /* yacc.c:1646  */
+#line 2068 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 114:
-#line 379 "c99.y" /* yacc.c:1646  */
+#line 381 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2081,15 +2083,16 @@ yyreduce:
 
           cout << endl;
           print_tree_bracketed(ast);
+          print_tree_bracketed(ast);
           cout << endl;
 
           (yyval) = ast;
         }
-#line 2089 "c99.tab.c" /* yacc.c:1646  */
+#line 2092 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 115:
-#line 400 "c99.y" /* yacc.c:1646  */
+#line 403 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2097,11 +2100,11 @@ yyreduce:
           ast.append_child(root, "STRUCT");
           (yyval) = ast;
         }
-#line 2101 "c99.tab.c" /* yacc.c:1646  */
+#line 2104 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 116:
-#line 407 "c99.y" /* yacc.c:1646  */
+#line 410 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator rule;
@@ -2109,11 +2112,11 @@ yyreduce:
           ast.append_child(rule, "UNION");
           (yyval) = ast;
         }
-#line 2113 "c99.tab.c" /* yacc.c:1646  */
+#line 2116 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 117:
-#line 417 "c99.y" /* yacc.c:1646  */
+#line 420 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root, subroot;
@@ -2124,11 +2127,11 @@ yyreduce:
           );
           (yyval) = ast;
         }
-#line 2128 "c99.tab.c" /* yacc.c:1646  */
+#line 2131 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 118:
-#line 427 "c99.y" /* yacc.c:1646  */
+#line 430 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root,sdl;
@@ -2146,11 +2149,11 @@ yyreduce:
 
           (yyval) = ast;
         }
-#line 2150 "c99.tab.c" /* yacc.c:1646  */
+#line 2153 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 119:
-#line 447 "c99.y" /* yacc.c:1646  */
+#line 450 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2166,11 +2169,11 @@ yyreduce:
 
           (yyval) = ast;
         }
-#line 2170 "c99.tab.c" /* yacc.c:1646  */
+#line 2173 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 120:
-#line 465 "c99.y" /* yacc.c:1646  */
+#line 468 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root, sd;
@@ -2184,11 +2187,11 @@ yyreduce:
 
           (yyval) =ast;
         }
-#line 2188 "c99.tab.c" /* yacc.c:1646  */
+#line 2191 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 121:
-#line 478 "c99.y" /* yacc.c:1646  */
+#line 481 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root, sd;
@@ -2199,11 +2202,11 @@ yyreduce:
           );
           (yyval) =ast;
         }
-#line 2203 "c99.tab.c" /* yacc.c:1646  */
+#line 2206 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 122:
-#line 488 "c99.y" /* yacc.c:1646  */
+#line 491 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root, sd;
@@ -2218,11 +2221,11 @@ yyreduce:
             );
           (yyval) = ast;
         }
-#line 2222 "c99.tab.c" /* yacc.c:1646  */
+#line 2225 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 123:
-#line 502 "c99.y" /* yacc.c:1646  */
+#line 505 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root, sd;
@@ -2234,11 +2237,11 @@ yyreduce:
             );
           (yyval) =ast;
         }
-#line 2238 "c99.tab.c" /* yacc.c:1646  */
+#line 2241 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 124:
-#line 516 "c99.y" /* yacc.c:1646  */
+#line 519 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root, sd;
@@ -2246,11 +2249,11 @@ yyreduce:
           ast.reparent(root, find((yyvsp[0]).begin(), (yyvsp[0]).end(), "root"));
           (yyval) =ast;
         }
-#line 2250 "c99.tab.c" /* yacc.c:1646  */
+#line 2253 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 125:
-#line 523 "c99.y" /* yacc.c:1646  */
+#line 526 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root, sd;
@@ -2260,11 +2263,11 @@ yyreduce:
           ast.reparent(root, find((yyvsp[-1]).begin(), (yyvsp[-1]).end(), "root"));
           (yyval) =ast;
         }
-#line 2264 "c99.tab.c" /* yacc.c:1646  */
+#line 2267 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 126:
-#line 535 "c99.y" /* yacc.c:1646  */
+#line 538 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root, sd;
@@ -2275,11 +2278,11 @@ yyreduce:
           );
           (yyval) =ast;
         }
-#line 2279 "c99.tab.c" /* yacc.c:1646  */
+#line 2282 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 127:
-#line 545 "c99.y" /* yacc.c:1646  */
+#line 548 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root, sd;
@@ -2288,11 +2291,11 @@ yyreduce:
           ast.append_child(root, "constant_expression");
           (yyval) =ast;
         }
-#line 2292 "c99.tab.c" /* yacc.c:1646  */
+#line 2295 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 128:
-#line 553 "c99.y" /* yacc.c:1646  */
+#line 556 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root, sd;
@@ -2305,11 +2308,11 @@ yyreduce:
           ast.append_child(root, "constant_expression");
           (yyval) =ast;
         }
-#line 2309 "c99.tab.c" /* yacc.c:1646  */
+#line 2312 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 138:
-#line 586 "c99.y" /* yacc.c:1646  */
+#line 589 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root, sd;
@@ -2317,11 +2320,11 @@ yyreduce:
           ast.append_child(root, "CONST");
           (yyval) = ast;
         }
-#line 2321 "c99.tab.c" /* yacc.c:1646  */
+#line 2324 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 139:
-#line 593 "c99.y" /* yacc.c:1646  */
+#line 596 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2329,11 +2332,11 @@ yyreduce:
           ast.append_child(root, "RESTRICT");
           (yyval) = ast;
         }
-#line 2333 "c99.tab.c" /* yacc.c:1646  */
+#line 2336 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 140:
-#line 600 "c99.y" /* yacc.c:1646  */
+#line 603 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2341,11 +2344,11 @@ yyreduce:
           ast.append_child(root, "VOLATILE");
           (yyval) = ast;
         }
-#line 2345 "c99.tab.c" /* yacc.c:1646  */
+#line 2348 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 142:
-#line 614 "c99.y" /* yacc.c:1646  */
+#line 617 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2360,11 +2363,11 @@ yyreduce:
           );
           (yyval) = ast;
         }
-#line 2364 "c99.tab.c" /* yacc.c:1646  */
+#line 2367 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 143:
-#line 628 "c99.y" /* yacc.c:1646  */
+#line 631 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2375,11 +2378,11 @@ yyreduce:
           );
           (yyval) = ast;
         }
-#line 2379 "c99.tab.c" /* yacc.c:1646  */
+#line 2382 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 144:
-#line 642 "c99.y" /* yacc.c:1646  */
+#line 645 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2387,11 +2390,11 @@ yyreduce:
           ast.append_child(root, "IDENTIFIER"),
           (yyval) = ast;
         }
-#line 2391 "c99.tab.c" /* yacc.c:1646  */
+#line 2394 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 145:
-#line 649 "c99.y" /* yacc.c:1646  */
+#line 652 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2404,11 +2407,11 @@ yyreduce:
           ast.append_child(root, ")");
           (yyval) = ast;
         }
-#line 2408 "c99.tab.c" /* yacc.c:1646  */
+#line 2411 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 146:
-#line 661 "c99.y" /* yacc.c:1646  */
+#line 664 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2429,11 +2432,11 @@ yyreduce:
           ast.append_child(root, "]");
           (yyval) = ast;
         }
-#line 2433 "c99.tab.c" /* yacc.c:1646  */
+#line 2436 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 147:
-#line 681 "c99.y" /* yacc.c:1646  */
+#line 684 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2450,11 +2453,11 @@ yyreduce:
           ast.append_child(root, "]");
           (yyval) = ast;
         }
-#line 2454 "c99.tab.c" /* yacc.c:1646  */
+#line 2457 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 148:
-#line 697 "c99.y" /* yacc.c:1646  */
+#line 700 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2471,11 +2474,11 @@ yyreduce:
           ast.append_child(root, "]");
           (yyval) = ast;
         }
-#line 2475 "c99.tab.c" /* yacc.c:1646  */
+#line 2478 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 149:
-#line 713 "c99.y" /* yacc.c:1646  */
+#line 716 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2500,11 +2503,11 @@ yyreduce:
           ast.append_child(root, "]");
           (yyval) = ast;
         }
-#line 2504 "c99.tab.c" /* yacc.c:1646  */
+#line 2507 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 150:
-#line 737 "c99.y" /* yacc.c:1646  */
+#line 740 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2529,11 +2532,11 @@ yyreduce:
           ast.append_child(root, "]");
           (yyval) = ast;
         }
-#line 2533 "c99.tab.c" /* yacc.c:1646  */
+#line 2536 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 151:
-#line 761 "c99.y" /* yacc.c:1646  */
+#line 764 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2554,11 +2557,11 @@ yyreduce:
           ast.append_child(root, "]");
           (yyval) = ast;
         }
-#line 2558 "c99.tab.c" /* yacc.c:1646  */
+#line 2561 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 152:
-#line 781 "c99.y" /* yacc.c:1646  */
+#line 784 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2575,11 +2578,11 @@ yyreduce:
           ast.append_child(root, "]");
           (yyval) = ast;
         }
-#line 2579 "c99.tab.c" /* yacc.c:1646  */
+#line 2582 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 153:
-#line 797 "c99.y" /* yacc.c:1646  */
+#line 800 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2592,11 +2595,11 @@ yyreduce:
           ast.append_child(root, "]");
           (yyval) = ast;
         }
-#line 2596 "c99.tab.c" /* yacc.c:1646  */
+#line 2599 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 154:
-#line 809 "c99.y" /* yacc.c:1646  */
+#line 812 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2613,11 +2616,11 @@ yyreduce:
           ast.append_child(root, ")");
           (yyval) = ast;
         }
-#line 2617 "c99.tab.c" /* yacc.c:1646  */
+#line 2620 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 155:
-#line 825 "c99.y" /* yacc.c:1646  */
+#line 828 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2634,11 +2637,11 @@ yyreduce:
           ast.append_child(root, ")");
           (yyval) = ast;
         }
-#line 2638 "c99.tab.c" /* yacc.c:1646  */
+#line 2641 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 156:
-#line 841 "c99.y" /* yacc.c:1646  */
+#line 844 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root;
@@ -2651,11 +2654,11 @@ yyreduce:
           ast.append_child(root, ")");
           (yyval) = ast;
         }
-#line 2655 "c99.tab.c" /* yacc.c:1646  */
+#line 2658 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 157:
-#line 856 "c99.y" /* yacc.c:1646  */
+#line 859 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root, sd;
@@ -2663,11 +2666,11 @@ yyreduce:
           ast.append_child(root, "*");
           (yyval) = ast;
         }
-#line 2667 "c99.tab.c" /* yacc.c:1646  */
+#line 2670 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 158:
-#line 863 "c99.y" /* yacc.c:1646  */
+#line 866 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root, sd;
@@ -2679,11 +2682,11 @@ yyreduce:
           );
           (yyval) = ast;
         }
-#line 2683 "c99.tab.c" /* yacc.c:1646  */
+#line 2686 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 159:
-#line 874 "c99.y" /* yacc.c:1646  */
+#line 877 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root, sd;
@@ -2692,11 +2695,11 @@ yyreduce:
           ast.append_child(root, "pointer");
           (yyval) = ast;
         }
-#line 2696 "c99.tab.c" /* yacc.c:1646  */
+#line 2699 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 160:
-#line 882 "c99.y" /* yacc.c:1646  */
+#line 885 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root, sd;
@@ -2712,11 +2715,11 @@ yyreduce:
           );
           (yyval) = ast;
         }
-#line 2716 "c99.tab.c" /* yacc.c:1646  */
+#line 2719 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 161:
-#line 900 "c99.y" /* yacc.c:1646  */
+#line 903 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root, sd;
@@ -2727,11 +2730,11 @@ yyreduce:
           );
           (yyval) = ast;
         }
-#line 2731 "c99.tab.c" /* yacc.c:1646  */
+#line 2734 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 162:
-#line 910 "c99.y" /* yacc.c:1646  */
+#line 913 "c99.y" /* yacc.c:1646  */
     {
           tree<string> ast;
           tree<string>::iterator root, sd;
@@ -2746,29 +2749,29 @@ yyreduce:
           );
           (yyval) = ast;
         }
-#line 2750 "c99.tab.c" /* yacc.c:1646  */
+#line 2753 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 209:
-#line 1016 "c99.y" /* yacc.c:1646  */
+#line 1019 "c99.y" /* yacc.c:1646  */
     {}
-#line 2756 "c99.tab.c" /* yacc.c:1646  */
+#line 2759 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 210:
-#line 1017 "c99.y" /* yacc.c:1646  */
+#line 1020 "c99.y" /* yacc.c:1646  */
     {}
-#line 2762 "c99.tab.c" /* yacc.c:1646  */
+#line 2765 "c99.tab.c" /* yacc.c:1646  */
     break;
 
   case 237:
-#line 1074 "c99.y" /* yacc.c:1646  */
+#line 1077 "c99.y" /* yacc.c:1646  */
     {}
-#line 2768 "c99.tab.c" /* yacc.c:1646  */
+#line 2771 "c99.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 2772 "c99.tab.c" /* yacc.c:1646  */
+#line 2775 "c99.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -2996,7 +2999,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 1079 "c99.y" /* yacc.c:1906  */
+#line 1082 "c99.y" /* yacc.c:1906  */
 
 #include <stdio.h>
 

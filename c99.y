@@ -348,6 +348,7 @@ struct_or_union_specifier
           );
 
           cout << endl;
+          print_tree_bracketed(ast);
           print_tree_dashed(ast);
           cout << endl;
           $$ = ast;
@@ -373,6 +374,7 @@ struct_or_union_specifier
 
           cout << endl;
           print_tree_bracketed(ast);
+          print_tree_bracketed(ast);
           cout << endl;
           $$ = ast;
         }
@@ -389,6 +391,7 @@ struct_or_union_specifier
           ast.append_child(root, "IDENTIFIER");
 
           cout << endl;
+          print_tree_bracketed(ast);
           print_tree_bracketed(ast);
           cout << endl;
 
